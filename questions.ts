@@ -107,4 +107,42 @@ function spitSubject(teacher: { subject: string | string[] }) {
 console.log(spitSubject(cheol));
 console.log(spitSubject(yeong));
 console.log(spitSubject(min));
-console.log(spitSubject(test));
+// console.log(spitSubject(test)); // error 발생
+
+// 9. type alias 속성 중복 합치기
+type ThisNum = number;
+type ThatNum = number;
+type Another = ThisNum & ThatNum;
+const x: Another = 10;
+
+// 10.
+type Task = {
+  color?: string;
+  size: number;
+  readonly position: number[];
+};
+
+// 11.
+type UserData = {
+  readonly name: string;
+  phone: number;
+  email: string;
+};
+
+// 12.
+type CheckUser = {
+  readonly name: string;
+  phone: number;
+  email: string;
+};
+type IsAdult = {
+  isAdult: boolean;
+};
+type CheckTheUser = CheckUser & IsAdult;
+
+const youuu: CheckTheUser = {
+  name: 'me',
+  phone: 10101010,
+  email: 'alkfjadslf',
+  isAdult: true,
+};

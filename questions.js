@@ -94,4 +94,10 @@ function spitSubject(teacher) {
 console.log(spitSubject(cheol));
 console.log(spitSubject(yeong));
 console.log(spitSubject(min));
-console.log(spitSubject(test));
+var x = 10;
+var youuu = {
+    name: 'me',
+    phone: 10101010,
+    email: 'alkfjadslf',
+    isAdult: true,
+};

@@ -51,3 +51,28 @@ const objs: { a: string | number } = { a: 7 };
 // Any Type -> all type possible -> 보통 unknown으로 대신하여 사용 (더 안전)
 let any: any | unknown = null;
 any = true;
+
+// type alias
+type Animal = { name: string; age: number };
+const animals: Animal = { name: 'monkey', age: 20 };
+
+// readonly
+type Gf = {
+  readonly name: string;
+};
+const gf: Gf = {
+  name: 'Amber',
+};
+// gf.name = 'another'; // TS파일에서는 error를 띄우지만, js에서는 결국 수정은 됨
+
+// type alias extend
+// 1)
+type Name = string;
+type Age = number;
+type Person = Name | Age;
+
+// 2)
+type PositionX = { x: number };
+type PositionY = { y: number };
+type PositionXY = PositionX & PositionY; // {x: number, y: number}
+const position: PositionXY = { x: 30, y: 20 };

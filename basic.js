@@ -32,3 +32,8 @@ var objs = { a: 7 };
 // Any Type -> all type possible -> 보통 unknown으로 대신하여 사용 (더 안전)
 var any = null;
 any = true;
+var animals = { name: 'monkey', age: 20 };
+var gf = {
+    name: 'Amber',
+};
+var position = { x: 30, y: 20 };
