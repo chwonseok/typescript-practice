@@ -66,3 +66,32 @@ function ableMarriage(income, house, charm) {
 }
 console.log(ableMarriage(700, false, '중'));
 console.log(ableMarriage(100, false, '상'));
+// 7. 문자열 숫자 변환기
+function cleaning(a) {
+    var result = [];
+    a.forEach(function (b) {
+        if (typeof b === 'string')
+            result.push(parseInt(b));
+        else
+            result.push(b);
+    });
+    return result;
+}
+cleaning(['1', 2, 3]);
+// 8.
+var cheol = { subject: 'math' };
+var yeong = { subject: ['science', 'english'] };
+var min = { subject: ['science', 'art', 'korean'] };
+var test = { hello: 'hi' };
+function spitSubject(teacher) {
+    if (Array.isArray(teacher.subject))
+        return teacher.subject[teacher.subject.length - 1];
+    else if (typeof teacher.subject === 'string')
+        return teacher.subject;
+    else
+        return 'Nope';
+}
+console.log(spitSubject(cheol));
+console.log(spitSubject(yeong));
+console.log(spitSubject(min));
+console.log(spitSubject(test));

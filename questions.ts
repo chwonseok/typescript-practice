@@ -76,3 +76,35 @@ function ableMarriage(
 }
 console.log(ableMarriage(700, false, '중'));
 console.log(ableMarriage(100, false, '상'));
+
+// 7. 문자열 숫자 변환기
+function cleaning(a: (number | string)[]) {
+  let result: number[] = [];
+
+  a.forEach((b) => {
+    if (typeof b === 'string') result.push(parseInt(b));
+    else result.push(b);
+  });
+
+  return result;
+}
+
+cleaning(['1', 2, 3]);
+
+// 8.
+const cheol = { subject: 'math' };
+const yeong = { subject: ['science', 'english'] };
+const min = { subject: ['science', 'art', 'korean'] };
+const test = { hello: 'hi' };
+
+function spitSubject(teacher: { subject: string | string[] }) {
+  if (Array.isArray(teacher.subject))
+    return teacher.subject[teacher.subject.length - 1];
+  else if (typeof teacher.subject === 'string') return teacher.subject;
+  else return 'Nope';
+}
+
+console.log(spitSubject(cheol));
+console.log(spitSubject(yeong));
+console.log(spitSubject(min));
+console.log(spitSubject(test));
