@@ -101,3 +101,22 @@ var youuu = {
     email: 'alkfjadslf',
     isAdult: true,
 };
+var cutZero = function (a) {
+    if (a.slice(0, 1) === '0')
+        return a.slice(1);
+    else
+        return a;
+};
+cutZero('0abc');
+var removeDash = function (a) {
+    var result = a.replace(/-/g, '');
+    return parseInt(result);
+};
+console.log(removeDash('-23'));
+// 15. callback function w/TS
+var cbFunc = function (a, function1, function2) {
+    var resultA = function1(a);
+    var resultB = function2(resultA);
+    console.log(resultB);
+};
+cbFunc('010-1111-2222', cutZero, removeDash);

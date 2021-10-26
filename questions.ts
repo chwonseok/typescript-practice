@@ -146,3 +146,33 @@ const youuu: CheckTheUser = {
   email: 'alkfjadslf',
   isAdult: true,
 };
+
+// 13. 문자열 앞에 0이 있다면 0을 제거후 리턴
+type CutZeroType = (a: string) => string;
+const cutZero: CutZeroType = (a) => {
+  if (a.slice(0, 1) === '0') return a.slice(1);
+  else return a;
+};
+cutZero('0abc');
+
+// 14. 문자 입력 시 dash 및 문자 제거 후 숫자 타입으로 리턴
+type RemoveDashType = (a: string) => number;
+const removeDash: RemoveDashType = function (a) {
+  const result = a.replace(/-/g, '');
+  return parseInt(result);
+};
+
+console.log(removeDash('-23'));
+
+// 15. callback function w/TS
+const cbFunc = (
+  a: string,
+  function1: CutZeroType,
+  function2: RemoveDashType
+) => {
+  const resultA = function1(a);
+  const resultB = function2(resultA);
+  console.log(resultB);
+};
+
+cbFunc('010-1111-2222', cutZero, removeDash);
