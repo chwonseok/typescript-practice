@@ -120,3 +120,41 @@ var cbFunc = function (a, function1, function2) {
     console.log(resultB);
 };
 cbFunc('010-1111-2222', cutZero, removeDash);
+// 16. class
+var Cars = /** @class */ (function () {
+    function Cars(model, price) {
+        this.model = model;
+        this.price = price;
+    }
+    Cars.prototype.tax = function () {
+        var tax = this.price * 0.1;
+        return tax;
+    };
+    return Cars;
+}());
+var possibleCar = new Cars('550D', 2000);
+console.log(possibleCar);
+console.log(possibleCar.tax());
+// 17. class
+// Word()에 입력되는 숫자, 문자를 자동으로 분류되도록 만들기
+var Word = /** @class */ (function () {
+    function Word() {
+        var _this = this;
+        var elements = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            elements[_i] = arguments[_i];
+        }
+        this.num = [];
+        this.str = [];
+        elements.forEach(function (el) {
+            if (typeof el === 'number')
+                _this.num.push(el);
+            if (typeof el === 'string')
+                _this.str.push(el);
+        });
+    }
+    return Word;
+}());
+var myTest = new Word('choi', 123, 'hey', 123123, 2929);
+console.log(myTest.num);
+console.log(myTest.str);

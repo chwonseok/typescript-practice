@@ -24,3 +24,21 @@ const navers = document.querySelectorAll('.naver');
 navers.forEach((naver) => {
   if (naver instanceof HTMLAnchorElement) naver.href = 'https://kakao.com';
 });
+
+// Class
+class Family {
+  lastName: 'Choi'; // JS는 이런 필드값없이도 아래에 this.lastName 사용 가능. TS는 필드값 미리 선언 필요
+  firstName: string;
+  constructor(a: string) {
+    this.lastName = 'Choi';
+    this.firstName = a;
+  }
+  greet() {
+    console.log(`hi I'm ${this.firstName}`);
+  }
+}
+
+const person1 = new Family('Wonseok');
+const person2 = new Family('Wonjun');
+person1.greet();
+console.log(person1, person2);

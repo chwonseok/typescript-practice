@@ -176,3 +176,41 @@ const cbFunc = (
 };
 
 cbFunc('010-1111-2222', cutZero, removeDash);
+
+// 16. class
+class Cars {
+  model: string;
+  price: number;
+
+  constructor(model: string, price: number) {
+    this.model = model;
+    this.price = price;
+  }
+
+  tax(): number {
+    const tax = this.price * 0.1;
+    return tax;
+  }
+}
+const possibleCar = new Cars('550D', 2000);
+console.log(possibleCar);
+console.log(possibleCar.tax());
+
+// 17. class
+// Word()에 입력되는 숫자, 문자를 자동으로 분류되도록 만들기
+class Word {
+  num: number[];
+  str: string[];
+  constructor(...elements: (string | number)[]) {
+    this.num = [];
+    this.str = [];
+    elements.forEach((el) => {
+      if (typeof el === 'number') this.num.push(el);
+      if (typeof el === 'string') this.str.push(el);
+    });
+  }
+}
+
+const myTest = new Word('choi', 123, 'hey', 123123, 2929);
+console.log(myTest.num);
+console.log(myTest.str);

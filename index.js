@@ -25,3 +25,18 @@ navers.forEach(function (naver) {
     if (naver instanceof HTMLAnchorElement)
         naver.href = 'https://kakao.com';
 });
+// Class
+var Family = /** @class */ (function () {
+    function Family(a) {
+        this.lastName = 'Choi';
+        this.firstName = a;
+    }
+    Family.prototype.greet = function () {
+        console.log("hi I'm " + this.firstName);
+    };
+    return Family;
+}());
+var person1 = new Family('Wonseok');
+var person2 = new Family('Wonjun');
+person1.greet();
+console.log(person1, person2);
