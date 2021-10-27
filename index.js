@@ -40,3 +40,5 @@ var person1 = new Family('Wonseok');
 var person2 = new Family('Wonjun');
 person1.greet();
 console.log(person1, person2);
+var student1 = { name: 'kim' };
+var teacher1 = { name: 'kim', age: 30 };

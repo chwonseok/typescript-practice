@@ -42,3 +42,21 @@ const person1 = new Family('Wonseok');
 const person2 = new Family('Wonjun');
 person1.greet();
 console.log(person1, person2);
+
+// Interface
+interface Student {
+  name: string;
+}
+
+interface Teacher extends Student {
+  age: number;
+}
+const student1: Student = { name: 'kim' };
+const teacher1: Teacher = { name: 'kim', age: 30 };
+
+type Animals = {
+  name: string;
+};
+type Dogs = {
+  name: number;
+} & Animals;

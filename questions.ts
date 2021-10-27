@@ -214,3 +214,28 @@ class Word {
 const myTest = new Word('choi', 123, 'hey', 123123, 2929);
 console.log(myTest.num);
 console.log(myTest.str);
+
+// 18. Interface
+interface Cart {
+  product: string;
+  price: number;
+}
+
+let 장바구니: Cart[] = [
+  { product: '청소기', price: 7000 },
+  { product: '삼다수', price: 800 },
+];
+
+interface MyObject {
+  plus: (a: number, b: number) => number;
+  minus: (a: number, b: number) => number;
+}
+
+const myObject: MyObject = {
+  plus(a, b) {
+    return a + b;
+  },
+  minus(a, b) {
+    return a - b;
+  },
+};

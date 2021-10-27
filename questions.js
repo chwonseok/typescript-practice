@@ -158,3 +158,15 @@ var Word = /** @class */ (function () {
 var myTest = new Word('choi', 123, 'hey', 123123, 2929);
 console.log(myTest.num);
 console.log(myTest.str);
+var 장바구니 = [
+    { product: '청소기', price: 7000 },
+    { product: '삼다수', price: 800 },
+];
+var myObject = {
+    plus: function (a, b) {
+        return a + b;
+    },
+    minus: function (a, b) {
+        return a - b;
+    },
+};
